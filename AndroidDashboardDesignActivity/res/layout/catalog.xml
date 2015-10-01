@@ -2,27 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
  android:orientation="vertical" android:layout_width="fill_parent"
  android:layout_height="fill_parent" android:background="#ffffff">
-  <TextView
-        android:id="@+id/tvIsConnected"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"    
-        android:background="#FF0000"
-        android:textColor="#FFF"
-        android:textSize="18dp"
-        android:layout_marginBottom="5dp"
-        android:text="is connected? " />
- 
-    <EditText
-        android:id="@+id/etResponse"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:ems="10"
-        android:layout_marginTop="10dp"
-        android:inputType="textMultiLine" >\
-        <requestFocus />
-    </EditText>
-    
  <TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
   android:layout_height="wrap_content" android:textColor="#000000"
   android:textSize="24dip" android:layout_margin="5dip" android:text="Temples Catalog"></TextView>

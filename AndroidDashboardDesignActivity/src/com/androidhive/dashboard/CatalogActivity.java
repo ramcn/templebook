@@ -34,8 +34,6 @@ import androidhive.dashboard.R;
 public class CatalogActivity extends Activity {
 
  private List<Product> mProductList;
- EditText etResponse;
- TextView tvIsConnected;
  
  public static String GET(String url){
      InputStream inputStream = null;
@@ -84,8 +82,7 @@ public class CatalogActivity extends Activity {
      // onPostExecute displays the results of the AsyncTask.
      @Override
      protected void onPostExecute(String result) {
-         Toast.makeText(getBaseContext(), "Received!", Toast.LENGTH_LONG).show();
-         etResponse.setText(result);
+    	 Log.d("InputStream", result);
     }
  }
  /** Called when the activity is first created. */
@@ -94,17 +91,6 @@ public class CatalogActivity extends Activity {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.catalog);
 
-  // get reference to the views
-  etResponse = (EditText) findViewById(R.id.etResponse);
-  tvIsConnected = (TextView) findViewById(R.id.tvIsConnected);
-  // check if you are connected or not
-  if(isConnected()){
-      tvIsConnected.setBackgroundColor(0xFF00CC00);
-      tvIsConnected.setText("You are conncted");
-  }
-  else{
-      tvIsConnected.setText("You are NOT conncted");
-  }
   // Obtain a reference to the product catalog
   mProductList = ShoppingCartHelper.getCatalog(getResources());
   new HttpAsyncTask().execute("http://192.168.56.1:8080/pooja/temples.htm");
